@@ -7,7 +7,7 @@ ogSched = openpyxl.load_workbook('View_My_Courses.xlsx').active
 savedSched = []
 for row in ogSched.rows:
     savedSched.append([cell.value for cell in row])
-savedSched = [x[4: len(savedSched)] for x in savedSched]
+savedSched = [x[6: len(savedSched)] for x in savedSched]
 savedSched = savedSched[3:len(savedSched)]
 for row in range(len(savedSched)):
         for col in range(len(savedSched[0])):
@@ -47,4 +47,5 @@ for row in savedSched:
         e.extra.append(ContentLine(name="RRULE", value = f"FREQ=WEEKLY;BYDAY={",".join(frequency)};UNTIL={"".join(endDate)}T{str(round(endTime/60))}{str(endTime%60)}00"))
         Classes.events.add(e)
 with open('View_My_Courses.ics', 'w') as f:
+
      f.writelines(Classes.serialize_iter())

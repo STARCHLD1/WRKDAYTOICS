@@ -8,4 +8,4 @@ Installing:
 3. Install the `ics` package: `pip install ics` in the console
 4. Download `WorkdayToCalendar.py` from here.
 
-Simply place the python file within the same folder as the .xlsx file and run the program, the ics file will be placed in the same folder after completion.
+Simply place the python file within the same folder as the .xlsx file and run the program, the ics file will be placed in the said folder after completion.
